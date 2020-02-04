@@ -14,12 +14,13 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 Plug 'jiangmiao/auto-pairs'
-Plug 'ycm-core/YouCompleteMe'
+" Plug 'ycm-core/YouCompleteMe'
 
 Plug 'arzg/vim-colors-xcode'
 
 Plug 'MaxMEllon/vim-jsx-pretty'
 
+Plug 'ctrlpvim/ctrlp.vim'
 
 call plug#end()
 
