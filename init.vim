@@ -12,14 +12,10 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
 Plug 'jiangmiao/auto-pairs'
-" Plug 'ycm-core/YouCompleteMe'
-
+Plug 'ycm-core/YouCompleteMe'
 Plug 'arzg/vim-colors-xcode'
-
 Plug 'MaxMEllon/vim-jsx-pretty'
-
 Plug 'ctrlpvim/ctrlp.vim'
 
 call plug#end()
@@ -27,6 +23,9 @@ call plug#end()
 
 " global variables
 let g:airline_theme="onedark"
+" YCM config to use python3
+let g:loaded_python3_provider = 1
+let g:python3_host_prog = '/usr/bin/env python3'
 
 
 " internal settings
