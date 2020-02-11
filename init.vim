@@ -17,15 +17,9 @@ Plug 'ycm-core/YouCompleteMe'
 Plug 'arzg/vim-colors-xcode'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'Yggdroot/indentLine'
 
 call plug#end()
-
-
-" global variables
-let g:airline_theme="onedark"
-" YCM config to use python3
-let g:loaded_python3_provider = 1
-let g:python3_host_prog = '/usr/bin/env python3'
 
 
 " internal settings
@@ -35,18 +29,25 @@ set wrap
 set autoindent
 set shiftwidth=4
 set tabstop=1
+set expandtab
 
 " how many commands to remember
 set history=100
 
 set incsearch
 
-"set listchars=tab:▸\ ,eol:¬
-"set listchars=tab: \ ,eol:¬
-"set list
-
 set ignorecase
 
 syntax enable
 
 colorscheme xcodedark
+
+" global variables
+let g:airline_theme="onedark"
+" YCM config to use python3
+let g:loaded_python3_provider = 1
+let g:python3_host_prog = '/usr/bin/env python3'
+" indentLine config
+let g:indentLine_showFirstIndentLevel = 1
+let g:indentLine_char_list = ['|', '¦']
+let g:indentLine_color_term = 237 "almost invisible grey
