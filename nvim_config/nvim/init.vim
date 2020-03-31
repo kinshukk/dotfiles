@@ -18,9 +18,10 @@ Plug 'arzg/vim-colors-xcode'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Yggdroot/indentLine'
+Plug 'preservim/nerdcommenter'
+" Plug 'vim-syntastic/syntastic'
 
 call plug#end()
-
 
 " internal settings
 set number
@@ -38,16 +39,40 @@ set incsearch
 
 set ignorecase
 
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+
 syntax enable
 
 colorscheme xcodedark
 
 " global variables
+
 let g:airline_theme="onedark"
+
 " YCM config to use python3
 let g:loaded_python3_provider = 1
 let g:python3_host_prog = '/usr/bin/env python3'
+
 " indentLine config
 let g:indentLine_showFirstIndentLevel = 1
 let g:indentLine_char_list = ['|', '¦']
 let g:indentLine_color_term = 237 "almost invisible grey
+
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+
+set wildignore+=*/.git/*
+set wildignore+=*/node_modules/*
+
+let mapleader = ","
+
+filetype plugin on
+
+" compile and exec cpp files for CP
+map <F8> :w <CR> :!g++ % && ./a.out <CR>
+
+autocmd BufNewFile */competitive_programming/*.cpp 0r ~/.config/nvim/templates/CP.cpp
