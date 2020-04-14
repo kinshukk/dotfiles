@@ -19,6 +19,7 @@ Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'preservim/nerdcommenter'
+Plug 'posva/vim-vue'
 " Plug 'vim-syntastic/syntastic'
 
 call plug#end()
@@ -58,7 +59,11 @@ let g:python3_host_prog = '/usr/bin/env python3'
 " indentLine config
 let g:indentLine_showFirstIndentLevel = 1
 let g:indentLine_char_list = ['|', '¦']
-let g:indentLine_color_term = 237 "almost invisible grey
+"almost invisible grey
+let g:indentLine_color_term = 237
+let g:indentLine_concealcursor = "nv"
+" because it renders quotes as indent lines for some reason
+let g:indentLine_fileTypeExclude = ["json"]
 
 "let g:syntastic_always_populate_loc_list = 1
 "let g:syntastic_auto_loc_list = 1
@@ -76,3 +81,6 @@ filetype plugin on
 map <F8> :w <CR> :!g++ % && ./a.out <CR>
 
 autocmd BufNewFile */competitive_programming/*.cpp 0r ~/.config/nvim/templates/CP.cpp
+
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
